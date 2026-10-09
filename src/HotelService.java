@@ -1,3 +1,3 @@
-interface HotelService {
-    String getServiceName();
+public interface HotelService {
+    void executeService();
 }
