@@ -16,3 +16,41 @@ Cart: A service class implementing the HotelService interface, responsible for h
 FrontDesk: The facade class that coordinates interactions between the client (HotelApp) and the individual hotel services.
 
 HotelApp: The client class that uses the FrontDesk facade to access and utilize hotel services seamlessly.
+
+```mermaid
+classDiagram
+    class HotelService {
+        <<interface>>
+        +executeService()
+    }
+    class Valet {
+        +pickUpVehicle(String plateNumber)
+        +executeService()
+    }
+    class HouseKeeping {
+        +cleanRoom(int roomNumber)
+        +executeService()
+    }
+    class Cart {
+        +requestCart(int numberOfCarts)
+        +executeService()
+    }
+    class FrontDesk {
+        -Valet valet
+        -HouseKeeping houseKeeping
+        -Cart cart
+        +pickUpVehicle(String plateNumber)
+        +cleanRoom(int roomNumber)
+        +requestCart(int numberOfCarts)
+    }
+    class HotelApp {
+        +main(String[] args)
+    }
+
+    HotelService <|.. Valet
+    HotelService <|.. HouseKeeping
+    HotelService <|.. Cart
+    FrontDesk --> Valet
+    FrontDesk --> HouseKeeping
+    FrontDesk --> Cart
+    HotelApp --> FrontDesk
