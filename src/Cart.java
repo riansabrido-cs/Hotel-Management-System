@@ -1,10 +1,11 @@
-class Cart implements HotelService {
-    @Override
-    public String getServiceName() {
-        return "Cart Service";
+public class Cart implements HotelService {
+    
+    public void requestCart(int numberOfCarts) {
+        System.out.println("Cart service: Providing " + numberOfCarts + " luggage cart(s) to the guest.");
     }
 
-    public void requestCart(int numberOfCarts) {
-        System.out.println("[Cart] " + numberOfCarts + " luggage cart(s) dispatched to the guest.");
+    @Override
+    public void executeService() {
+        System.out.println("Executing Cart Service.");
     }
 }
