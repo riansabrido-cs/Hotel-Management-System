@@ -1,10 +1,11 @@
-class HouseKeeping implements HotelService {
-    @Override
-    public String getServiceName() {
-        return "Housekeeping Service";
+public class HouseKeeping implements HotelService {
+    
+    public void cleanRoom(int roomNumber) {
+        System.out.println("Housekeeping service: Cleaning room number " + roomNumber + ".");
     }
 
-    public void cleanRoom(int roomNumber) {
-        System.out.println("[HouseKeeping] Room number " + roomNumber + " has been scheduled for cleaning.");
+    @Override
+    public void executeService() {
+        System.out.println("Executing Housekeeping Service.");
     }
 }
