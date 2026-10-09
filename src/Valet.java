@@ -1,10 +1,11 @@
-class Valet implements HotelService {
-    @Override
-    public String getServiceName() {
-        return "Valet Service";
+public class Valet implements HotelService {
+    
+    public void pickUpVehicle(String plateNumber) {
+        System.out.println("Valet service: Retrieving vehicle with plate number " + plateNumber + ".");
     }
 
-    public void pickUpVehicle(String plateNumber) {
-        System.out.println("[Valet] Vehicle with plate number " + plateNumber + " has been requested and is on the way.");
+    @Override
+    public void executeService() {
+        System.out.println("Executing Valet Service.");
     }
 }
